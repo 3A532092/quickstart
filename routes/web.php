@@ -10,9 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Task;
+use Illuminate\Http\Request;
+
 
 Route::get('/', function () {
-    //
+
     $tasks = Task::orderBy('created_at', 'asc')->get();
 	         //利用model Task由DB的tasks資料表取出資料
     return view('tasks', [
